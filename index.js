@@ -14,10 +14,8 @@ app.get('/', (req, res) => {
 
 app.get('/:id', (req, res) => {
     const id = req.params.id;
-    res.sendFile(__dirname + '/public/index.html');
+    res.json(require('./starwars-api-master/api/id/' + id + '.json'));
 });
-
-
 
 
 app.listen(port, () => {
