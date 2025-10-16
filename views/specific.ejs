@@ -1,0 +1,29 @@
+<%- include('templates/common/headerSpecific') %>
+
+<div class="container my-4">
+  <div class="card bg-secondary text-white p-4 shadow">
+    <div class="row g-2 align-items-center">
+      
+      <div class="col-md-4 text-center">
+        <img src="<%= data.image %>" alt="<%= data.name %>" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: cover;">
+      </div>
+
+        <div class="col-md-8">
+            <h2><%= data.name %></h2>
+            <p><strong>ID:</strong> <%= data.id %></p>
+            <p><strong>Species:</strong> <%= data.species || 'Unknown' %></p>
+            <p><strong>Gender:</strong> <%= data.gender || 'Unknown' %></p>
+            <p><strong>Height:</strong> <%= data.height || 'N/A' %></p>
+            <p><strong>Mass:</strong> <%= data.mass || 'N/A' %></p>
+            <p><strong>Homeworld:</strong> <%= data.homeworld || 'Unknown' %></p>
+            <p><strong>Born:</strong> <%= data.born %> </p> 
+            <p><strong>Died:</strong> <%= data.died || 'Still Alive' %> </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('templates/common/footer') %>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
