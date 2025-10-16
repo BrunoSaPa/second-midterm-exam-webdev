@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.get('/:id', (req, res) => {
     const id = req.params.id;
-    res.json(require('./starwars-api-master/api/id/' + id + '.json'));
+    res.render('specific', { data: require('./starwars-api-master/api/id/' + id + '.json') });
 });
 
 
