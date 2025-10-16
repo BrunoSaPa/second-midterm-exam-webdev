@@ -16,8 +16,47 @@
             <p><strong>Height:</strong> <%= data.height || 'N/A' %></p>
             <p><strong>Mass:</strong> <%= data.mass || 'N/A' %></p>
             <p><strong>Homeworld:</strong> <%= data.homeworld || 'Unknown' %></p>
-            <p><strong>Born:</strong> <%= data.born %> </p> 
+            <p><strong>Born:</strong> <%= data.born || 'Unknown' %> </p> 
             <p><strong>Died:</strong> <%= data.died || 'Still Alive' %> </p>
+
+            <% if (data.manufacturer) { %>
+                <p><strong>Manufacturer:</strong> <%= data.manufacturer %></p>
+                <p><strong>Model:</strong> <%= data.model %></p>
+            <% } %>
+
+            <% if (data.affiliations && data.affiliations.length > 0) { %>
+                <p><strong>Affiliations:</strong></p>
+                <ul>
+                    <% data.affiliations.forEach(function(aff) { %>
+                    <li><%= aff %></li>
+                    <% }); %>
+                </ul>
+            <% } %>
+
+            <% if (data.masters) { %>
+                <p><strong>Master(s):</strong> <%= data.masters %></p>        
+            <% } %>
+
+            <% if (data.apprentices) { %>
+                <p><strong>Apprentice(s):</strong> <%= data.apprentices %></p>            
+            <% } %>
+
+            <% if (data.species != 'human') { %>
+                <p><strong>Color: </strong> <%= data.skinColor || 'Unknown' %> </p>
+            <% } %>
+
+            <% if (data.cybernetics) { %>
+                <p><strong>Cybernetics:</strong> <%= data.cybernetics %></p>
+            <% } %>
+
+            <% if (data.diedLocation) { %>
+                <p><strong>Location of Death:</strong> <%= data.diedLocation %></p>
+            <% } %>
+
+            <% if (data.wiki) { %>
+                <a href="<%= data.wiki %>" target="_blank" class="btn btn-light mt-3">Open Wiki Page</a>
+            <% } %>
+
       </div>
     </div>
   </div>
