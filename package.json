@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/BrunoSaPa/second-midterm-exam#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
     "nodemon": "^3.1.10"
   }

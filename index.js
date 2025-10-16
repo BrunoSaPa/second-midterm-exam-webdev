@@ -6,10 +6,11 @@ const port = 3005;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     //send the json "all.json" file from starwars-api-master/api
-    res.json(require('./starwars-api-master/api/all.json'));
+    res.render('general', { data: require('./starwars-api-master/api/all.json') });
 });
 
 app.get('/:id', (req, res) => {
