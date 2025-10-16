@@ -1,0 +1,23 @@
+{
+  "name": "second-midterm-exam",
+  "version": "1.0.0",
+  "description": "second midterm exam for web development class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoSaPa/second-midterm-exam.git"
+  },
+  "author": "BrunoSaPa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunoSaPa/second-midterm-exam/issues"
+  },
+  "homepage": "https://github.com/BrunoSaPa/second-midterm-exam#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
