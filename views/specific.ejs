@@ -33,6 +33,15 @@
                 </ul>
             <% } %>
 
+            <% if (data.formerAffiliations.length > 0) { %>
+                <p><strong>Former Affiliations:</strong></p>
+                <ul>
+                    <% data.formerAffiliations.forEach(function(aff) { %>
+                        <li><%= aff %></li>
+                    <% }); %>
+                </ul>
+            <% } %>
+
             <% if (data.masters) { %>
                 <p><strong>Master(s):</strong> <%= data.masters %></p>        
             <% } %>
