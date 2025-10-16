@@ -3,13 +3,18 @@ const https = require('https');
 const app = express();
 const port = 3005;
 
-app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('index');
+    //send the json "all.json" file from starwars-api-master/api
+    res.json(require('./starwars-api-master/api/all.json'));
+});
+
+app.get('/:id', (req, res) => {
+    const id = req.params.id;
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 
