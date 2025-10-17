@@ -1,74 +1,87 @@
 <%- include('templates/common/headerSpecific') %>
 
 <div class="container my-4">
-  <div class="card bg-secondary text-white p-4 shadow">
-    <div class="row g-2 align-items-center">
+    <div class="card bg-secondary text-white p-4 shadow">
+
+        <div class="d-flex justify-content-between my-2">
+            <a href="/<%= data.id - 1 %>" class="btn btn-outline-light">
+            ← Previous
+            </a>
+
+            <a href="/<%= data.id + 1 %>" class="btn btn-outline-light">
+            Next →
+            </a>
+        </div>
+
+
+        <div class="row g-2 align-items-center">
       
-      <div class="col-md-4 text-center">
-        <img src="<%= data.image %>" alt="<%= data.name %>" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: cover;">
-      </div>
+            <div class="col-md-4 text-center">
+                <img src="<%= data.image %>" alt="<%= data.name %>" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: cover;">
+            </div>
 
-        <div class="col-md-8">
-            <h2><%= data.name %></h2>
-            <p><strong>ID:</strong> <%= data.id %></p>
-            <p><strong>Species:</strong> <%= data.species || 'Unknown' %></p>
-            <p><strong>Gender:</strong> <%= data.gender || 'Unknown' %></p>
-            <p><strong>Height:</strong> <%= data.height || 'N/A' %></p>
-            <p><strong>Mass:</strong> <%= data.mass || 'N/A' %></p>
-            <p><strong>Homeworld:</strong> <%= data.homeworld || 'Unknown' %></p>
-            <p><strong>Born:</strong> <%= data.born || 'Unknown' %> </p> 
-            <p><strong>Died:</strong> <%= data.died || 'Still Alive' %> </p>
 
-            <% if (data.manufacturer) { %>
-                <p><strong>Manufacturer:</strong> <%= data.manufacturer %></p>
-                <p><strong>Model:</strong> <%= data.model %></p>
-            <% } %>
+            <div class="col-md-8">    
+                <h2><%= data.name %></h2>
+                <p><strong>ID:</strong> <%= data.id %></p>
+                <p><strong>Species:</strong> <%= data.species || 'Unknown' %></p>
+                <p><strong>Gender:</strong> <%= data.gender || 'Unknown' %></p>
+                <p><strong>Height:</strong> <%= data.height || 'N/A' %></p>
+                <p><strong>Mass:</strong> <%= data.mass || 'N/A' %></p>
+                <p><strong>Homeworld:</strong> <%= data.homeworld || 'Unknown' %></p>
+                <p><strong>Born:</strong> <%= data.born || 'Unknown' %> </p> 
+                <p><strong>Died:</strong> <%= data.died || 'Still Alive' %> </p>
 
-            <% if (data.affiliations && data.affiliations.length > 0) { %>
-                <p><strong>Affiliations:</strong></p>
-                <ul>
-                    <% data.affiliations.forEach(function(aff) { %>
-                    <li><%= aff %></li>
-                    <% }); %>
-                </ul>
-            <% } %>
+                <% if (data.manufacturer) { %>
+                    <p><strong>Manufacturer:</strong> <%= data.manufacturer %></p>
+                    <p><strong>Model:</strong> <%= data.model %></p>
+                <% } %>
 
-            <% if (data.formerAffiliations.length > 0) { %>
-                <p><strong>Former Affiliations:</strong></p>
-                <ul>
-                    <% data.formerAffiliations.forEach(function(aff) { %>
+                <% if (data.affiliations && data.affiliations.length > 0) { %>
+                    <p><strong>Affiliations:</strong></p>
+                    <ul>
+                        <% data.affiliations.forEach(function(aff) { %>
                         <li><%= aff %></li>
-                    <% }); %>
-                </ul>
-            <% } %>
+                        <% }); %>
+                    </ul>
+                <% } %>
 
-            <% if (data.masters) { %>
-                <p><strong>Master(s):</strong> <%= data.masters %></p>        
-            <% } %>
+                <% if (data.formerAffiliations.length > 0) { %>
+                    <p><strong>Former Affiliations:</strong></p>
+                    <ul>
+                        <% data.formerAffiliations.forEach(function(aff) { %>
+                            <li><%= aff %></li>
+                        <% }); %>
+                    </ul>
+                <% } %>
 
-            <% if (data.apprentices) { %>
-                <p><strong>Apprentice(s):</strong> <%= data.apprentices %></p>            
-            <% } %>
+                <% if (data.masters) { %>
+                    <p><strong>Master(s):</strong> <%= data.masters %></p>        
+                <% } %>
 
-            <% if (data.species != 'human') { %>
-                <p><strong>Color: </strong> <%= data.skinColor || 'Unknown' %> </p>
-            <% } %>
+                <% if (data.apprentices) { %>
+                    <p><strong>Apprentice(s):</strong> <%= data.apprentices %></p>            
+                <% } %>
 
-            <% if (data.cybernetics) { %>
-                <p><strong>Cybernetics:</strong> <%= data.cybernetics %></p>
-            <% } %>
+                <% if (data.species != 'human') { %>
+                    <p><strong>Color: </strong> <%= data.skinColor || 'Unknown' %> </p>
+                <% } %>
 
-            <% if (data.diedLocation) { %>
-                <p><strong>Location of Death:</strong> <%= data.diedLocation %></p>
-            <% } %>
+                <% if (data.cybernetics) { %>
+                    <p><strong>Cybernetics:</strong> <%= data.cybernetics %></p>
+                <% } %>
 
-            <% if (data.wiki) { %>
-                <a href="<%= data.wiki %>" target="_blank" class="btn btn-light mt-3">Open Wiki Page</a>
-            <% } %>
+                <% if (data.diedLocation) { %>
+                    <p><strong>Location of Death:</strong> <%= data.diedLocation %></p>
+                <% } %>
 
-      </div>
+                <% if (data.wiki) { %>
+                    <a href="<%= data.wiki %>" target="_blank" class="btn btn-light mt-3">Open Wiki Page</a>
+                <% } %>
+
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <%- include('templates/common/footer') %>
