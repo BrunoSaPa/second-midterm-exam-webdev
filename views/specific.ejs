@@ -4,13 +4,28 @@
     <div class="card bg-secondary text-white p-4 shadow">
 
         <div class="d-flex justify-content-between my-2">
-            <a href="/<%= data.id - 1 %>" class="btn btn-outline-light">
-            ← Previous
-            </a>
 
-            <a href="/<%= data.id + 1 %>" class="btn btn-outline-light">
-            Next →
-            </a>
+            <% if (data.id == 1) { %>
+                <a href="/<%= data.id + 87 %>" class="btn btn-outline-light">
+                ← Previous
+                </a>
+                <% } else { %>
+                <a href="/<%= data.id - 1 %>" class="btn btn-outline-light">
+                ← Previous
+                </a>
+            <% } %>
+
+            <% if (data.id == 88) { %>
+                <a href="/<%= data.id - 87 %>" class="btn btn-outline-light">
+                Next →
+                </a>
+                <% } else { %>
+                <a href="/<%= data.id + 1 %>" class="btn btn-outline-light">
+                Next →
+                </a>
+            <% } %>
+
+
         </div>
 
 
