@@ -1,19 +1,5 @@
 <%- include('templates/common/headerSpecific') %>
 
-<<<<<<< Updated upstream
-<div class="container my-5">
-
-    <div class="card bg-secondary border-0 shadow-lg p-4 rounded-4">
-
-        <div class="d-flex justify-content-between mb-4">
-                <% if (data.id == 1) { %>
-                <a href="/<%= data.id + 87 %>" class="btn btn-outline-warning px-4">
-                    <i class="fas fa-arrow-left me-1"></i> ← Previous
-                </a>
-                <% } else { %>
-                <a href="/<%= data.id - 1 %>" class="btn btn-outline-warning px-4">
-                    <i class="fas fa-arrow-left me-1"></i> ← Previous
-=======
 <div class="container my-4">
     <div class="card bg-secondary text-white p-4 shadow-lg border-warning border-2">
 
@@ -26,21 +12,9 @@
                 <% } else { %>
                 <a href="/<%= data.id - 1 %>" class="btn btn-warning btn-lg">
                 <i class="fas fa-chevron-left me-2"></i>Previous
->>>>>>> Stashed changes
                 </a>
-                <% } %>
+            <% } %>
 
-<<<<<<< Updated upstream
-                <% if (data.id == 88) { %>
-                <a href="/<%= data.id - 87 %>" class="btn btn-outline-warning px-4">
-                    Next → <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-                <% } else { %>
-                <a href="/<%= data.id + 1 %>" class="btn btn-outline-warning px-4">
-                    Next → <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-                <% } %>
-=======
             <% if (data.id == 88) { %>
                 <a href="/<%= data.id - 87 %>" class="btn btn-warning btn-lg">
                 Next<i class="fas fa-chevron-right ms-2"></i>
@@ -58,81 +32,9 @@
       
             <div class="col-md-4 text-center">
                 <img src="<%= data.image %>" alt="<%= data.name %>" class="img-fluid rounded shadow-lg border border-warning border-3" style="max-height: 400px; object-fit: cover;">
->>>>>>> Stashed changes
             </div>
 
-            <div class="row g-4 align-items-center">
 
-<<<<<<< Updated upstream
-            <div class="col-md-4 text-center">
-                <div class="position-relative rounded overflow-hidden shadow-lg border border-warning border-2">
-                    <img src="<%= data.image %>" alt="<%= data.name %>" 
-                        class="w-100 h-200 " style="max-height: 400px;">
-                </div>
-            </div>
-
-            <div class="col-md-8">
-                <h2 class="fw-bold text-warning mb-3"><%= data.name %></h2>
-                <ul class="list-unstyled">
-                    <li><strong>ID:</strong> <%= data.id %></li>
-                    <li><strong>Species:</strong> <%= data.species || 'Unknown' %></li>
-                    <li><strong>Gender:</strong> <%= data.gender || 'Unknown' %></li>
-                    <li><strong>Height:</strong> <%= data.height || 'N/A' %></li>
-                    <li><strong>Mass:</strong> <%= data.mass || 'N/A' %></li>
-                    <li><strong>Homeworld:</strong> <%= data.homeworld || 'Unknown' %></li>
-                    <li><strong>Born:</strong> <%= data.born || 'Unknown' %></li>
-                    <li><strong>Died:</strong> <%= data.died || 'Still Alive' %></li>
-
-                    <% if (data.manufacturer) { %>
-                        <li><strong>Manufacturer:</strong> <%= data.manufacturer %></li>
-                        <li><strong>Model:</strong> <%= data.model %></li>
-                    <% } %>
-
-                    <% if (data.affiliations && data.affiliations.length > 0) { %>
-                        <li><strong>Affiliations:</strong></li>
-                            <ul>
-                                <% data.affiliations.forEach(function(aff) { %>
-                                    <li><%= aff %></li>
-                                <% }); %>
-                            </ul>
-                    <% } %>
-
-                    <% if (data.formerAffiliations.length > 0) { %>
-                        <li><strong>Former Affiliations:</strong></li>
-                        <ul>
-                            <% data.formerAffiliations.forEach(function(aff) { %>
-                                <li><%= aff %></li>
-                            <% }); %>
-                        </ul>
-                    <% } %>
-
-                    <% if (data.masters) { %>
-                        <li><strong>Master(s):</strong> <%= data.masters %></li>
-                    <% } %>
-
-                    <% if (data.apprentices) { %>
-                        <li><strong>Apprentice(s):</strong> <%= data.apprentices %></li>
-                    <% } %>
-
-                    <% if (data.species != 'human') { %>
-                        <li><strong>Color:</strong> <%= data.skinColor || 'Unknown' %></li>
-                    <% } %>
-
-                    <% if (data.cybernetics) { %>
-                        <li><strong>Cybernetics:</strong> <%= data.cybernetics %></li>
-                    <% } %>
-
-                    <% if (data.diedLocation) { %>
-                        <li><strong>Location of Death:</strong> <%= data.diedLocation %></li>
-                    <% } %>
-                </ul>
-
-                <% if (data.wiki) { %>
-                    <a href="<%= data.wiki %>" target="_blank" class="btn btn-warning mt-3 fw-bold">
-                    <i class="fas fa-book me-1"></i> Open Wiki Page
-                    </a>
-                <% } %>
-=======
             <div class="col-md-8">    
                 <h2 class="text-warning display-5 fw-bold mb-4"><%= data.name %></h2>
                 <div class="character-info">
@@ -195,26 +97,11 @@
                 <% } %>
                 </div>
 
->>>>>>> Stashed changes
             </div>
         </div>
     </div>
 </div>
 
-<<<<<<< Updated upstream
-  <style>
-    ul li {
-      margin-bottom: 0.4rem;
-    }
-
-    .btn-outline-warning {
-      border-width: 2px;
-    }
-  </style>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-=======
-<!-- Custom Styles -->
 <style>
     body {
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -266,6 +153,5 @@
 
 <%- include('templates/common/footer') %>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
->>>>>>> Stashed changes
 </body>
 </html>
