@@ -13,6 +13,21 @@ app.get('/', (req, res) => {
     res.render('general', { data: require('./starwars-api-master/api/all.json') });
 });
 
+app.get('/search', (req, res) => {
+    const searchTerm = req.query.q ? req.query.q.toLowerCase() : '';
+    const allCharacters = require('./starwars-api-master/api/all.json');
+    
+    if (!searchTerm) {
+        return res.render('general', { data: allCharacters });
+    }
+    
+    const filteredCharacters = allCharacters.filter(character => 
+        character.name.toLowerCase().includes(searchTerm)
+    );
+    
+    res.render('general', { data: filteredCharacters });
+});
+
 app.get('/:id', (req, res) => {
     const id = req.params.id;
     res.render('specific', { data: require('./starwars-api-master/api/id/' + id + '.json') });
